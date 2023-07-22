@@ -28,8 +28,8 @@ export default class PlayerService {
         this.gameService.cameraService.moveLocation(this.playerController.position);
     }
 
-    start(){
-        this.playerController.start();
+    start(setShowTestPopUp,setShowDialogPopUp){
+        this.playerController.start(setShowTestPopUp, setShowDialogPopUp);
     }
 
     stop(){

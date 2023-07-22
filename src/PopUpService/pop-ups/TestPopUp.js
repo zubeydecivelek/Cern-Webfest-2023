@@ -8,7 +8,7 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
   const navigate = useNavigate();
 
   const test = tests[levelNumber];
-  const nextLevel = levelNumber + 1
+  const nextLevel = parseInt(levelNumber) + 1
   const totalQuestions = test.length
 
   const isLastLevel = levelNumber === tests.length-1;

@@ -23,7 +23,10 @@ const levels = [{
             [0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ],
-        physicist: [3, 2],
+        physicist: {
+            startPos: [3, 2],
+            rotation: 180
+        },
         startPos: [0, 0],
         endPos: [3, 9]
     },
@@ -36,7 +39,10 @@ const levels = [{
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ],
-        physicist: [2, 3],
+        physicist: {
+            startPos: [2, 3],
+            rotation: 180
+        },
         startPos: [0, 2],
         endPos: [0, 8]
     },
@@ -49,7 +55,10 @@ const levels = [{
             [1, 1, 1, 1, 0, 0, 0, 1, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
         ],
-        physicist: [1, 6],
+        physicist: {
+            startPos: [1, 6],
+            rotation: 180
+        },
         startPos: [4, 0],
         endPos: [5, 7]
     }, {
@@ -61,7 +70,10 @@ const levels = [{
             [0, 0, 1, 1, 0, 0, 0, 1, 0, 0],
             [0, 0, 1, 0, 0, 0, 0, 1, 0, 0],
         ],
-        physicist: [2, 5],
+        physicist: {
+            startPos: [2,5],
+            rotation: 180
+        },
         startPos: [5, 2],
         endPos: [5, 7]
     },
