@@ -1,10 +1,13 @@
 function move(controller){
+    if(controller.direction.x === 0 && controller.direction.y === 0) return;
+
     const newPosition = {
         x: controller.position.x + controller.direction.x * controller.moveSpeed,
         y: controller.position.y + controller.direction.y * controller.moveSpeed
     }
 
-    if(controller.service.isValidPosition(newPosition)){
+    if(controller.playerService.isValidPosition(newPosition)){
+        console.log("valid position")
         controller.position.x = newPosition.x;
         controller.position.y = newPosition.y;
     
@@ -78,14 +81,18 @@ export default class PlayerController {
     moveSpeed = 2;
     shutterSpeed = 20;
 
-    constructor(service){
+    constructor(){
         this.player = null;
         this.direction = {x: 0, y: 0};
         this.position = {x: 0, y: 0};
-        this.service = service;
 
         document.addEventListener("keydown", (e) => keyPressed(e, this));
         document.addEventListener("keyup", (e) => keyReleased(e, this));
+    }
+
+    getInstance(){
+        if(!this.instance) this.instance = new PlayerController();
+        return this.instance;
     }
 
     start(){
