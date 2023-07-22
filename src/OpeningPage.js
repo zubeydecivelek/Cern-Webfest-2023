@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import DialogPopUp from './PopUpService/Dialog';
-import TestPopUp from './PopUpService/TestPopUp';
+import DialogPopUp from './PopUpService/pop-ups/Dialog';
+import TestPopUp from './PopUpService/pop-ups/TestPopUp';
 import "./OpeningPage.css"
 
 const OpeningPage = () => {

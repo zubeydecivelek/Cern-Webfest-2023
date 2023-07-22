@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import { tests } from '../utils/tests';
-import './TestPopUp.css';
+import "../styled/TestPopUp.css"
 import LastLevelPopUp from './LastLevelPopUp';
 
 const TestPopUp = ({ setShowPopUp, levelNumber }) => {
@@ -23,7 +23,6 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
     event.preventDefault();
 
     setShowPopUp(false);
-    console.log("Next Level Loading...")
     navigate("/game/" + nextLevel)
     };
 

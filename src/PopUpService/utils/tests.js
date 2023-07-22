@@ -111,7 +111,8 @@ export const fieldPoints = {
     "Optics":8.92,
     "Material science":20.23,
     "Experimentalist": 67,
-    "Theorist": 33
+    "Theorist": 33,
+    "":0
 }
 
 
