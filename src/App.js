@@ -1,30 +1,21 @@
-import { useEffect } from 'react';
-import './App.css';
-import PlayerService from './GameService/PlayerService';
-import { Player } from './GameService/view/Player';
-import TileService from './GameService/TileService';
-import GameService from './GameService/GameService';
+import React from 'react';
+import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'; // Import Routes here
+import LandingPage from './pages/LandingPage';
+import GamePage from './pages/GamePage';
+import EndPage from './pages/EndPage';
 
-
-function App() {
-
-  const gameService = GameService.getInstance();
-
-  useEffect(() => {
-    gameService.start();
-
-    return () => {
-      gameService.stop();
-    }
-  });
-
+const App = () => {
   return (
     <div className="App">
-      <svg width="500px" height="500px" style={{border: "1px solid black"}} viewBox='-250 -250 500 500'>
-        <Player />
-      </svg>
+      <BrowserRouter>
+        <Routes> {/* Wrap your Route components in a Routes element */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/game" element={<GamePage />} />
+          <Route path="/end" element={<EndPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;
