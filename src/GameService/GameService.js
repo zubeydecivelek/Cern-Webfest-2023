@@ -7,6 +7,7 @@ export default class GameService {
         this.tileService = TileService.getInstance();
         this.playerService.gameService = this;
         this.tileService.gameService = this;
+        this.gameStarted = false;
     }
 
     static getInstance(){
@@ -14,11 +15,19 @@ export default class GameService {
         return this.instance;
     }
 
-    start(){
+    start(levelConfiguration){
+        let tileMap = this.tileService.applyLevelConfiguration(levelConfiguration);
+        this.gameStarted = true;
+
+        return tileMap;
+    }
+
+    freePlayer(){
         this.playerService.start();
     }
 
-    stop(){
+    stopPlayer(){
         this.playerService.stop();
+        this.gameStarted = false;
     }
 }

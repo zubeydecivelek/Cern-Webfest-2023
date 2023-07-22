@@ -1,4 +1,5 @@
 import PlayerService from "./PlayerService";
+import Tile from "./view/Tile";
 
 export default class TileService {
 
@@ -11,6 +12,20 @@ export default class TileService {
 
     applyLevelConfiguration(levelConfiguration){
         this.levelConfiguration = levelConfiguration;
+        return this.getTileMap(this.levelConfiguration.map);
+    }
+
+    getTileMap(map){
+        let tileMap = [];
+
+        for(let i=0; i<map.length; i++){
+            let row = [];
+            for(let j=0; j<map.length; j++){
+                row.push(<Tile size={this.tileSize} walkable={map[i][j]} x={this.tileSize * j} y={this.tileSize * i} />);
+            }
+        }
+        
+        return tileMap;
     }
 
     getTileIndex(position){
