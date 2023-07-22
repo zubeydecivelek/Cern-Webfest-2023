@@ -25,6 +25,7 @@ export default class PlayerService {
             x: (config.startPos[0] + 0.5) * TileService.tileSize,
             y: (config.startPos[1] + 0.5) * TileService.tileSize
         }
+        console.log(config.startPos[0])
         console.log(this.playerController.position)
     }
 
