@@ -1,3 +1,4 @@
+import CameraService from "./CameraService";
 import PlayerService from "./PlayerService";
 import TileService from "./TileService";
 
@@ -5,6 +6,7 @@ export default class GameService {
     constructor(){
         this.playerService = PlayerService.getInstance();
         this.tileService = TileService.getInstance();
+        this.cameraService = CameraService.getInstance();
         this.playerService.gameService = this;
         this.tileService.gameService = this;
         this.gameStarted = false;

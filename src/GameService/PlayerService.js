@@ -25,6 +25,7 @@ export default class PlayerService {
             x: (config.startPos[1] + 0.5) * TileService.tileSize,
             y: (config.startPos[0] + 0.5) * TileService.tileSize
         }
+        this.gameService.cameraService.moveLocation(this.playerController.position);
     }
 
     start(){

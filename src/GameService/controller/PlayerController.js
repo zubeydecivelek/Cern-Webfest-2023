@@ -12,6 +12,7 @@ function move(controller){
     
         const player = controller.getPlayer();
         if(player) player.setAttribute("transform", `translate(${newPosition.x}, ${newPosition.y})`);
+        controller.playerService.gameService.cameraService.moveLocation(controller.position);
     }
 }
 
