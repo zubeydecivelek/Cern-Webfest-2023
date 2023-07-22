@@ -9,7 +9,7 @@ const LandingPage = () => {
 
   // Function to handle the "Start Game" button click and navigate to the GamePage
   const handleStartGameClick = () => {
-    navigate(`/game/0`); 
+    navigate(`/choose-character`); 
   };
 
   return (

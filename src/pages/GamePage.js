@@ -6,7 +6,7 @@ import GameLevel from '../GameService/components/GameLevel';
 import GameService from '../GameService/GameService'
 import CameraService from '../GameService/CameraService';
 
-const GamePage = () => {
+const GamePage = ({character}) => {
   const { levelIndex } = useParams(); // Access the levelIndex parameter from the URL
   const parsedLevelIndex = levelIndex ? parseInt(levelIndex, 10) : 0;
   const levelConfiguration = levels[parsedLevelIndex];
@@ -23,7 +23,7 @@ const GamePage = () => {
   });
 
   return (
-      <GameLevel levelConfiguration={levelConfiguration} tileMap={tileMap}/>
+      <GameLevel levelConfiguration={levelConfiguration} tileMap={tileMap} character={character}/>
   );
 };
 
