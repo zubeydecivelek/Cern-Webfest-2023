@@ -4,7 +4,8 @@ import PlayerController from "./controller/PlayerController";
 export default class PlayerService {
     
     constructor(){
-        this.playerController = new PlayerController(this);
+        this.playerController = new PlayerController();
+        this.playerController.playerService = this;
     }
 
     static getInstance(){
@@ -15,7 +16,16 @@ export default class PlayerService {
     isValidPosition(position){
         const tileService = this.gameService.tileService;
         const tileIndex = tileService.getTileIndex(position);
+        if(tileIndex.row < 0 || tileIndex.col < 0) return false;
         return tileService.isWalkable(tileIndex);
+    }
+
+    setStartPosition(config){
+        this.playerController.position = {
+            x: (config.startPos[0] + 0.5) * TileService.tileSize,
+            y: (config.startPos[1] + 0.5) * TileService.tileSize
+        }
+        console.log(this.playerController.position)
     }
 
     start(){

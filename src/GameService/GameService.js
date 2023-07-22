@@ -16,6 +16,8 @@ export default class GameService {
     }
 
     start(levelConfiguration){
+        this.levelConfiguration = levelConfiguration;
+        this.playerService.setStartPosition(this.levelConfiguration);
         let tileMap = this.tileService.applyLevelConfiguration(levelConfiguration);
         this.gameStarted = true;
 
