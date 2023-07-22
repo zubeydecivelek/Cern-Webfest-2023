@@ -23,6 +23,7 @@ export default class TileService {
             for(let j=0; j<map.length; j++){
                 row.push(<Tile size={TileService.tileSize} walkable={map[i][j]} x={TileService.tileSize * j} y={TileService.tileSize * i} />);
             }
+            tileMap.push(row);
         }
         
         return tileMap;
