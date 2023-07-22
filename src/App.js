@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<OpeningPage />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/game/:levelIndex" element={<GamePage />} /> {/* Use JSX syntax */}
           <Route path="/end" element={<EndPage />} />
         </Routes>
