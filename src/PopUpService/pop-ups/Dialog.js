@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styled/Dialog.css"
 import { dialogs } from '../utils/informations';
-import scienctistImage from "../../images/physicist_face.png"; 
+import scienctistImage from '../../images/physicist_face.png'; 
 
 const DialogPopUp = ({ setShowPopUp, levelNumber }) => {
   const currentDialog = dialogs[levelNumber];
