@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import { lastLevel, fieldPoints } from '../utils/tests'
+import { lastLevel, fieldPoints } from "../utils/tests"
 import {useNavigate} from 'react-router-dom';
 
-import "./LastLevelPopUp.css"
+import "../styled/LastLevelPopUp.css"
 
 const LastLevelPopUp = ({ setShowPopUp }) => {
     const navigate = useNavigate();
@@ -33,7 +33,6 @@ const LastLevelPopUp = ({ setShowPopUp }) => {
     };
   
     const handleCloseResult = () => {
-        console.log(selectedAnswers)
       setShowResult(false);
       setPage(4); // Move to the fourth page after seeing the result
     };
@@ -41,6 +40,7 @@ const LastLevelPopUp = ({ setShowPopUp }) => {
     const handleFinishGame = () => {
       setShowPopUp(false);
       navigate("/end");
+      // TODO change here?
     };
   
     return (
