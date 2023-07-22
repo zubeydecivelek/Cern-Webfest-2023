@@ -9,7 +9,6 @@ const levels = [{
         ],
         physicist: {
             startPos: [0, 4],
-            popupPos: [1, 4],
             rotation: 180
         },
         startPos: [5, 3],
