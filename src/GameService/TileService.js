@@ -9,7 +9,6 @@ export default class TileService {
         if(!this.instance) this.instance = new TileService();
         return this.instance;
     }
-    
 
     applyLevelConfiguration(levelConfiguration){
         this.levelConfiguration = levelConfiguration;
@@ -17,7 +16,6 @@ export default class TileService {
     }
 
     getTileMap(map){
-       
         let tileMap = [];
 
         for(let i=0; i<map.length; i++){
@@ -25,8 +23,6 @@ export default class TileService {
             for(let j=0; j<map.length; j++){
                 row.push(<Tile size={TileService.tileSize} walkable={map[i][j]} x={TileService.tileSize * j} y={TileService.tileSize * i} />);
             }
-            
-            tileMap.push(row);
         }
         
         return tileMap;
