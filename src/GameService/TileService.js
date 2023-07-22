@@ -36,8 +36,14 @@ export default class TileService {
     }
 
     isWalkable(tileIndex){
+        console.log(tileIndex)
         if(!this.levelConfiguration) return true;
-        console.log("iswalkabe: " + this.levelConfiguration.map[tileIndex.row][tileIndex.col])
         return this.levelConfiguration.map[tileIndex.row][tileIndex.col]
+    }
+
+    isInsideBounds(tileIndex){
+        let numOfRows = this.levelConfiguration.map.length;
+        let numOfCols = this.levelConfiguration.map[0].length;
+        return tileIndex.row > -1 && tileIndex.row < numOfRows && tileIndex.col > -1 && tileIndex.col < numOfCols;
     }
 }
