@@ -1,5 +1,5 @@
-import TileService from "./TileService";
-import PlayerController from "./controller/PlayerController";
+import TileService from "../Tiles/TileService";
+import PlayerController from "./PlayerController";
 
 export default class PlayerService {
     

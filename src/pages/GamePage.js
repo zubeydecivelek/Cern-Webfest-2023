@@ -1,8 +1,8 @@
 // gamepage.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'; // Import the useParams hook
-import levels from '../GameService/levels';
-import GameLevel from '../GameService/view/GameLevel';
+import levels from '../Tiles/levels';
+import GameLevel from '../GameService/components/GameLevel';
 import GameService from '../GameService/GameService'
 import CameraService from '../GameService/CameraService';
 

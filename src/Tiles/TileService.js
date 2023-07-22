@@ -1,5 +1,5 @@
-import PlayerService from "./PlayerService";
-import Tile from "./view/Tile";
+import PlayerService from "../Player/PlayerService";
+import Tile from "./Tile";
 
 export default class TileService {
 
@@ -17,11 +17,10 @@ export default class TileService {
 
     getTileMap(map){
         let tileMap = [];
-        console.log(map)
         for(let i=0; i<map.length; i++){
             let row = [];
             for(let j=0; j<map[0].length; j++){
-                row.push(<Tile size={TileService.tileSize} type={map[i][j]} x={TileService.tileSize * j} y={TileService.tileSize * i} />);
+                row.push(<Tile key={i + "-" + j} size={TileService.tileSize} type={map[i][j]} x={TileService.tileSize * j} y={TileService.tileSize * i} />);
             }
             tileMap.push(row);
         }
@@ -36,7 +35,6 @@ export default class TileService {
     }
 
     isWalkable(tileIndex){
-        console.log(tileIndex)
         if(!this.levelConfiguration) return true;
         return this.levelConfiguration.map[tileIndex.row][tileIndex.col]
     }

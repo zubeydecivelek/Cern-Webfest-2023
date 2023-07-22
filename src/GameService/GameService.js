@@ -1,6 +1,6 @@
 import CameraService from "./CameraService";
-import PlayerService from "./PlayerService";
-import TileService from "./TileService";
+import PlayerService from "../Player/PlayerService";
+import TileService from "../Tiles/TileService";
 
 export default class GameService {
     constructor(){
