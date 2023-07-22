@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes> {/* Wrap your Route components in a Routes element */}
+        <Routes> {/* Wrap the Route components in a Routes element */}
           <Route path="/" element={<LandingPage />} />
           <Route path="/game" element={<GamePage />} />
           <Route path="/end" element={<EndPage />} />
