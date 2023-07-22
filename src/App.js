@@ -13,14 +13,9 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Routes>
-<<<<<<< Updated upstream
-          <Route path="/" element={<OpeningPage />} />
-          <Route path="/game/:levelIndex" element={<GamePage />} /> {/* Use JSX syntax */}
-=======
           <Route path="/" element={<LandingPage />} />
           <Route path="/choose-character" element={<ChooseCharacterPage setCharacter={setCharacter}/>} />
           <Route path="/game/:levelIndex" element={<GamePage character= {character}/>} />
->>>>>>> Stashed changes
           <Route path="/end" element={<EndPage />} />
         </Routes>
       </BrowserRouter>
