@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes, Link } from 'react-router-dom'; // Import Routes here
+import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Import BrowserRouter
 import LandingPage from './pages/LandingPage';
 import GamePage from './pages/GamePage';
 import EndPage from './pages/EndPage';
@@ -8,9 +7,9 @@ const App = () => {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes> {/* Wrap the Route components in a Routes element */}
+        <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/game" element={<GamePage />} />
+          <Route path="/game/:levelIndex" element={<GamePage />} /> {/* Add the ':levelIndex' parameter */}
           <Route path="/end" element={<EndPage />} />
         </Routes>
       </BrowserRouter>
