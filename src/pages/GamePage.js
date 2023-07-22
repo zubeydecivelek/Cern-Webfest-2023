@@ -6,7 +6,7 @@ import GameLevel from '../GameService/view/GameLevel';
 import GameService from '../GameService/GameService'
 
 
-const GamePage = () => {
+const GamePage = ({character}) => {
   const { levelIndex } = useParams(); // Access the levelIndex parameter from the URL
   const parsedLevelIndex = levelIndex ? parseInt(levelIndex, 10) : 0;
   const levelConfiguration = levels[parsedLevelIndex];
@@ -25,7 +25,7 @@ const GamePage = () => {
   return (
     <div>
       <h1>Welcome to Level {parsedLevelIndex}</h1>
-      <GameLevel levelConfiguration={levelConfiguration} tileMap={tileMap}/>
+      <GameLevel levelConfiguration={levelConfiguration} tileMap={tileMap} character={character}/>
     </div>
   );
 };

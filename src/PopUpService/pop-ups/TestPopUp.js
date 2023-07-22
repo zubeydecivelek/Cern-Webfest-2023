@@ -19,10 +19,13 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
   const [submitButtonText, setSubmitButtonText] = useState("Submit")
   const [showCongratulations, setShowCongratulations] = useState(false);
 
+  const handleClose = (event) =>{
+    event.preventDefault();
+    navigate("/game/" + levelNumber)
+  }
+
   const handleNextLevel= (event) => {
     event.preventDefault();
-
-    setShowPopUp(false);
     navigate("/game/" + nextLevel)
     };
 
@@ -71,6 +74,7 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
   return (
     <div className="popup">
       {isLastLevel ? (
+        // i dont think setShow is necessary
         <LastLevelPopUp setShowPopUp={setShowPopUp} />
       ) : showCongratulations ? (
         <div className="popup-content-end">
@@ -108,7 +112,7 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
               <button type="submit" onClick={handleSubmitTest}>
                 {submitButtonText}
               </button>
-              <button type="button" onClick={() => setShowPopUp(false)}>Close</button>
+              <button type="button" onClick={handleClose}>Close</button>
             </div>
           </form>
         </div>

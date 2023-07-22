@@ -22,6 +22,7 @@ const DialogPopUp = ({ setShowPopUp, levelNumber }) => {
 
   const handleClose = () => {
     setShowPopUp(false);
+    // or navigate?
   };
 
   return (

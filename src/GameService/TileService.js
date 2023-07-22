@@ -41,6 +41,7 @@ export default class TileService {
         return this.levelConfiguration.map[tileIndex.row][tileIndex.col]
     }
 
+
     isInsideBounds(tileIndex){
         let numOfRows = this.levelConfiguration.map.length;
         let numOfCols = this.levelConfiguration.map[0].length;

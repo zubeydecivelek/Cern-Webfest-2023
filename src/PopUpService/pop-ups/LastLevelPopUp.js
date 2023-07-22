@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { lastLevel, fieldPoints } from "../utils/tests"
+import { lastLevel, fieldPoints, tests } from "../utils/tests"
 import {useNavigate} from 'react-router-dom';
 
 import "../styled/LastLevelPopUp.css"
@@ -27,6 +27,10 @@ const LastLevelPopUp = ({ setShowPopUp }) => {
         return roundedScore
 
     }
+    const handleClose = (event) =>{
+      event.preventDefault();
+      navigate("/game/" + tests.length-1)
+    }
   
     const handleNext = () => {
       setPage((prevPage) => prevPage + 1);
@@ -38,9 +42,7 @@ const LastLevelPopUp = ({ setShowPopUp }) => {
     };
   
     const handleFinishGame = () => {
-      setShowPopUp(false);
       navigate("/end");
-      // TODO change here?
     };
   
     return (
@@ -51,7 +53,7 @@ const LastLevelPopUp = ({ setShowPopUp }) => {
             <p>{lastLevel.definition[0]}</p>
             <p>{lastLevel.definition[1]}</p>
             <div className="button-wrapper">
-              <button type="button" onClick={() => setShowPopUp(false)}>Close</button>
+              <button type="button" onClick={handleClose}>Close</button>
               <button type="button" onClick={handleNext}>Next</button>
             </div>
           </div>
