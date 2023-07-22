@@ -1,21 +1,20 @@
+// gamepage.js
 import React from 'react';
-import levels from '../GameService/levels'; // Import the levels array
-import GameLevel from '../GameService/view/GameLevel'; // Import the GameLevel component
+import { useParams } from 'react-router-dom'; // Import the useParams hook
+import levels from '../GameService/levels';
+import GameLevel from '../GameService/view/GameLevel';
 
-const GamePage = ({ params }) => {
-  const levelIndex = params && params.levelIndex ? parseInt(params.levelIndex, 10) : 0;
-
-  // Get the level configuration based on the level index
-  const levelConfiguration = levels[levelIndex];
+const GamePage = () => {
+  const { levelIndex } = useParams(); // Access the levelIndex parameter from the URL
+  const parsedLevelIndex = levelIndex ? parseInt(levelIndex, 10) : 0;
+  const levelConfiguration = levels[parsedLevelIndex];
 
   return (
     <div>
-      <h1>Welcome to Level {levelIndex}</h1>
-      {/* Render the GameLevel component and pass the level configuration as a prop */}
+      <h1>Welcome to Level {parsedLevelIndex}</h1>
       <GameLevel levelConfiguration={levelConfiguration} />
     </div>
   );
 };
 
 export default GamePage;
-
