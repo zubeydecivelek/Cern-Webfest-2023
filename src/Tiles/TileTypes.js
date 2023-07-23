@@ -6,6 +6,7 @@ import HorizontalPipe1 from "../images/horizontalpipe1.png";
 import HorizontalPipe2 from "../images/horizontalpipe2.png";
 import BluePipe1Vertical from "../images/bluepipe1Vertical.png";
 import BluePipe2Vertical from "../images/bluepipe2Vertical.png";
+import WallBottom from "../images/wall-shadow.png";
 
 const TileTypes = [
     {id: 1, type: "Floor", walkable: true, image: Floor},
@@ -16,6 +17,7 @@ const TileTypes = [
     {id: 6, type: "Blue Pipe 1 Vertical", walkable: true, image: BluePipe1Vertical},
     {id: 7, type: "Blue Pipe 2 Vertical", walkable: true, image: BluePipe2Vertical},
     {id: 0, type: "Wall", walkable: false,  image: Wall},
+    {id: 9, type: "Wall Bottom", walkable: false, image: WallBottom},
 ]
 
 /*
