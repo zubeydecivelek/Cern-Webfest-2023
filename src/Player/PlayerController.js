@@ -17,9 +17,15 @@ function move(controller,setShowTestPopUp, setShowDialogPopUp){
         controller.playerService.gameService.cameraService.moveLocation(controller.position);
         
         let tileIndex = controller.playerService.gameService.tileService.getTileIndex(newPosition);
+        
         let endPos = controller.playerService.gameService.levelConfiguration.endPos
-        if((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])){
-            setShowTestPopUp(true)
+        if ((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])) {
+            if (!controller.hasInteractedWithTest) {
+                setShowTestPopUp(true);
+                controller.hasInteractedWithTest = true; 
+            }
+        } else {
+            controller.hasInteractedWithTest = false;
         }
 
         let phyPos = controller.playerService.gameService.levelConfiguration.physicist.startPos;
@@ -105,6 +111,7 @@ export default class PlayerController {
         this.direction = {x: 0, y: 0};
         this.position = {x: 0, y: 0};
         this.hasInteractedWithPhyPos = false
+        this.hasInteractedWithTest = false
 
         document.addEventListener("keydown", (e) => keyPressed(e, this));
         document.addEventListener("keyup", (e) => keyReleased(e, this));
