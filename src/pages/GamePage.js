@@ -10,7 +10,6 @@ import DialogPopUp from "../PopUpService/pop-ups/Dialog"
 
 const GamePage = ({character}) => {
 
-  console.log(character);
 
   const setShowTestPopUp = (show) => {
     const testPopUp = document.getElementById("test-pop-up");

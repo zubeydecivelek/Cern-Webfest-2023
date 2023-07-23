@@ -36,7 +36,6 @@ const Player = params => {
             handleKeyDown.downPressed,
             handleKeyDown.rightPressed
         );
-        console.log(newangle)
         setAngle(newangle + 90);
     }
 
@@ -109,7 +108,6 @@ const Player = params => {
     }, [isRunning, setIsRunning]);
 
     let character = isRunning ? (leftFoot ? params.character.right : params.character.left) : params.character.standing;
-    console.log(character)
     return <g id="player" transform={`translate(${params.startPos.x}, ${params.startPos.y})`}>
         <image 
             href={character} 

@@ -1,4 +1,4 @@
-import { allCharacters } from "../pages/constants";
+
 function move(controller,setShowTestPopUp, setShowDialogPopUp){
     if(controller.direction.x === 0 && controller.direction.y === 0) return;
 
@@ -125,11 +125,11 @@ export default class PlayerController {
     }
 
     start(setShowTestPopUp,setShowDialogPopUp){
-        setInterval(() => move(this,setShowTestPopUp,setShowDialogPopUp), this.shutterSpeed);
+        this.intervalId = setInterval(() => move(this,setShowTestPopUp,setShowDialogPopUp), this.shutterSpeed);
     }
 
     stop(){
-        clearInterval(() => move(this));
+        if(this.intervalId) clearInterval(this.intervalId);
     }
 
     getPlayer(){
