@@ -13,6 +13,9 @@ function move(controller){
         const player = controller.getPlayer();
         if(player) player.setAttribute("transform", `translate(${newPosition.x}, ${newPosition.y})`);
         controller.playerService.gameService.cameraService.moveLocation(controller.position);
+
+        let tileIndex = controller.playerService.gameService.tileService.getTileIndex(controller.position);
+        controller.playerService.gameService.triggerEvent(tileIndex);
     }
 }
 
@@ -78,8 +81,8 @@ function keyReleased(e, controller) {
 
 export default class PlayerController {
 
-    moveSpeed = 2;
-    shutterSpeed = 20;
+    moveSpeed = 1;
+    shutterSpeed = 25;
 
     constructor(){
         this.player = null;

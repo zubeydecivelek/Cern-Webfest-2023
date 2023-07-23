@@ -2,9 +2,11 @@ import CameraService from "./CameraService";
 import PlayerService from "../Player/PlayerService";
 import TileService from "../Tiles/TileService";
 import TileEventService from "../Tiles/TileEventService";
+import { Event } from "../Tiles/Events";
 
 export default class GameService {
-    constructor(){
+    constructor(level){
+        this.level = level;
         this.playerService = PlayerService.getInstance();
         this.tileService = TileService.getInstance();
         this.cameraService = CameraService.getInstance();
@@ -13,13 +15,33 @@ export default class GameService {
         this.tileService.gameService = this;
         this.cameraService.gameService = this;
         this.tileEventService.gameService = this;
+        this.events = [];
+        this.triggeredEvents = [];
         
         this.gameStarted = false;
     }
 
-    static getInstance(){
-        if(!this.instance) this.instance = new GameService();
+    static getInstance(level){
+        if(!this.instance) this.instance = new GameService(level);
         return this.instance;
+    }
+
+    triggerEvent(position){
+        const equal = (a, b) => a.row === b[0] && a.col === b[1];
+        for(let event of this.events){
+            if(equal(position, event.position)){
+                if(!this.triggeredEvents.find(id => id === event.id)){
+                    console.log("event triggered")
+
+                    this.triggeredEvents.push(event.id);
+                    event.execute();
+                }
+            }
+        }
+    }
+
+    addTileEvent(id, tileIndex, action){
+        this.events.push(new Event(id, tileIndex, action));
     }
 
     start(levelConfiguration){

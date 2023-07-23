@@ -1,5 +1,6 @@
 import PlayerService from "../Player/PlayerService";
 import Tile from "./Tile";
+import TileTypes from "./TileTypes";
 
 export default class TileService {
 
@@ -36,7 +37,9 @@ export default class TileService {
 
     isWalkable(tileIndex){
         if(!this.levelConfiguration) return true;
-        return this.levelConfiguration.map[tileIndex.row][tileIndex.col]
+        let tileId = this.levelConfiguration.map[tileIndex.row][tileIndex.col]
+        let tileType = TileTypes.find(tt => tt.id === tileId);
+        return tileType.walkable;
     }
 
     isInsideBounds(tileIndex){
