@@ -28,7 +28,6 @@ export default class GameService {
         for(let event of this.events){
             if(equal(position, event.position)){
                 if(!this.triggeredEvents.find(id => id === event.id)){
-                    console.log("event triggered")
 
                     this.triggeredEvents.push(event.id);
                     event.execute();

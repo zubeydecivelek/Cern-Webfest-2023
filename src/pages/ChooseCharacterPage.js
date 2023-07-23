@@ -10,7 +10,6 @@ const ChooseCharacterPage = ({setCharacter}) => {
   const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(null);
 
   const selectCharacter = (index) => {
-    console.log(characterImages)
     setSelectedCharacterIndex(index);
     setCharacter(characterImages[index]);
   };

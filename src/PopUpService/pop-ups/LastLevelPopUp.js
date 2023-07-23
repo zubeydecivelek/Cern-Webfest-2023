@@ -7,6 +7,7 @@ import "../styled/LastLevelPopUp.css"
 const LastLevelPopUp = ({ setShowPopUp }) => {
     const navigate = useNavigate();
 
+    console.log("LAST-LEVEL-POP_UP")
     const [page, setPage] = useState(1);
     const [selectedAnswers, setSelectedAnswers] = useState(new Array(lastLevel.questions.length).fill(""));
     const [showResult, setShowResult] = useState(false);
@@ -89,7 +90,10 @@ const LastLevelPopUp = ({ setShowPopUp }) => {
         {page === 3 && (
           <div className="result-popup">
           <h2>Quiz Result</h2>    
-          <h1>Your chances of winning a Nobel Prize in Physics is Result {calculateScore()}%</h1>
+          <h1>Your chances of winning a Nobel Prize in Physics is {calculateScore()}%</h1>
+          {
+            Object.keys(fieldPoints).map(key => fieldPoints[key] ? <div key={key}>{key}: {fieldPoints[key]}%</div> : <></>)
+          }
           <div className="button-wrapper">
             <button type="button" onClick={handleCloseResult}>Next</button>
           </div>

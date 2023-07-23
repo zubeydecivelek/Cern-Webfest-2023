@@ -11,7 +11,7 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
   const nextLevel = parseInt(levelNumber) + 1
   const totalQuestions = test.length
 
-  const isLastLevel = levelNumber === tests.length-1;
+  const isLastLevel = parseInt(levelNumber) === tests.length-1;
 
   const [selectedAnswers, setSelectedAnswers] = useState(new Array(totalQuestions).fill(-1));
   const [submitted, setSubmitted] = useState(false);

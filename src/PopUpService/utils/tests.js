@@ -46,7 +46,7 @@ const testLevel2 =[
 
 const testLevel3 =[
     {
-        "question": "What are the Quarks flavors ?",
+        "question": "What are some of the Quark flavors?",
         "choices": [
             "up, down, and strange",
             "red, green and blue",
