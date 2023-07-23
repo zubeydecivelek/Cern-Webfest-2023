@@ -53,8 +53,8 @@ export default class GameService {
         return tileMap;
     }
 
-    freePlayer(){
-        this.playerService.start();
+    freePlayer(setShowTestPopUp, setShowDialogPopUp){
+        this.playerService.start(setShowTestPopUp, setShowDialogPopUp);
     }
 
     stopPlayer(){

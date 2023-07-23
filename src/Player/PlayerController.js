@@ -1,4 +1,6 @@
-function move(controller){
+import Physicist from "../GameService/components/Physicist";
+
+function move(controller,setShowTestPopUp, setShowDialogPopUp){
     if(controller.direction.x === 0 && controller.direction.y === 0) return;
 
     const newPosition = {
@@ -13,9 +15,19 @@ function move(controller){
         const player = controller.getPlayer();
         if(player) player.setAttribute("transform", `translate(${newPosition.x}, ${newPosition.y})`);
         controller.playerService.gameService.cameraService.moveLocation(controller.position);
+        
+        let tileIndex = controller.playerService.gameService.tileService.getTileIndex(newPosition);
+        let endPos = controller.playerService.gameService.levelConfiguration.endPos
+        console.log(tileIndex, endPos)
+        if((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])){
+            setShowTestPopUp(true)
+        }
 
-        let tileIndex = controller.playerService.gameService.tileService.getTileIndex(controller.position);
-        controller.playerService.gameService.triggerEvent(tileIndex);
+        let phyPos = controller.playerService.gameService.levelConfiguration.physicist.startPos;
+        if((tileIndex.row === phyPos[0]) && (tileIndex.col === phyPos[1])){
+            setShowDialogPopUp(true)
+        }
+        
     }
 }
 
@@ -98,8 +110,8 @@ export default class PlayerController {
         return this.instance;
     }
 
-    start(){
-        setInterval(() => move(this), this.shutterSpeed);
+    start(setShowTestPopUp,setShowDialogPopUp){
+        setInterval(() => move(this,setShowTestPopUp,setShowDialogPopUp), this.shutterSpeed);
     }
 
     stop(){
