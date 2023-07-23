@@ -1,7 +1,8 @@
 const dialogLevel0 = {
     "title" :  "Level 0 - Atoms",
     "informations" : [
-        "5th century BC : apparition of the idea that matter is composed of indivisible elements 1808 : John Dalton develops the theory that the particles in one object are all the same, but vary from one object to another",
+        "5th century BC : apparition of the idea that matter is composed of indivisible elements",
+        "1808 : John Dalton develops the theory that the particles in one object are all the same, but vary from one object to another",
         "John Dalton was an English physicist who made several significant discoveries and contributions to science during the late 18th and early 19th centuries.",
         "He is most famous for his development of the Atomic Theory, proposed in the early 1800s. This theory revolutionized the understanding of matter and its composition. Dalton said that all matter is made up of tiny, indivisible particles called atoms. He suggested that each element is characterized by unique atoms with specific properties, such as mass and chemical behavior. Furthermore, Dalton proposed that chemical reactions involve the rearrangement of atoms to form new compounds.",
     ]
