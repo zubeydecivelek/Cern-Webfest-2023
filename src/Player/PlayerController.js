@@ -1,6 +1,7 @@
 import Physicist from "../GameService/components/Physicist";
 
 function move(controller,setShowTestPopUp, setShowDialogPopUp){
+    console.log(controller)
     if(controller.direction.x === 0 && controller.direction.y === 0) return;
 
     const newPosition = {
@@ -18,13 +19,19 @@ function move(controller,setShowTestPopUp, setShowDialogPopUp){
         
         let tileIndex = controller.playerService.gameService.tileService.getTileIndex(newPosition);
         let endPos = controller.playerService.gameService.levelConfiguration.endPos
+        console.log(tileIndex, endPos)
         if((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])){
             setShowTestPopUp(true)
         }
 
         let phyPos = controller.playerService.gameService.levelConfiguration.physicist.startPos;
-        if((tileIndex.row === phyPos[0]) && (tileIndex.col === phyPos[1])){
-            setShowDialogPopUp(true)
+        if (tileIndex.row === phyPos[0] && tileIndex.col === phyPos[1]) {
+            if (!controller.hasInteractedWithPhyPos) {
+              setShowDialogPopUp(true);
+              controller.hasInteractedWithPhyPos = true; 
+            }
+        } else {
+            controller.hasInteractedWithPhyPos = false;
         }
         
     }
@@ -99,6 +106,7 @@ export default class PlayerController {
         this.player = null;
         this.direction = {x: 0, y: 0};
         this.position = {x: 0, y: 0};
+        this.hasInteractedWithPhyPos = false
 
         document.addEventListener("keydown", (e) => keyPressed(e, this));
         document.addEventListener("keyup", (e) => keyReleased(e, this));
