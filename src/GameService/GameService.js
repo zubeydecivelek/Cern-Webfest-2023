@@ -40,8 +40,9 @@ export default class GameService {
         this.events.push(new Event(id, tileIndex, action));
     }
 
-    start(levelConfiguration){
+    start(levelConfiguration, character){
         this.levelConfiguration = levelConfiguration;
+        this.playerService.setCharacter(character);
         this.playerService.setStartPosition(levelConfiguration);
         let tileMap = this.tileService.applyLevelConfiguration(levelConfiguration);
         this.gameStarted = true;

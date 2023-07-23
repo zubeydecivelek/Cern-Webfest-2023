@@ -20,6 +20,10 @@ export default class PlayerService {
         return tileService.isWalkable(tileIndex);
     }
 
+    setCharacter(character){
+        this.playerController.character = character;
+    }
+
     setStartPosition(config){
         this.playerController.position = {
             x: (config.startPos[1] + 0.5) * TileService.tileSize,

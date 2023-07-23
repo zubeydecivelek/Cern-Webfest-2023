@@ -10,6 +10,8 @@ import DialogPopUp from "../PopUpService/pop-ups/Dialog"
 
 const GamePage = ({character}) => {
 
+  console.log(character);
+
   const setShowTestPopUp = (show) => {
     const testPopUp = document.getElementById("test-pop-up");
     if(testPopUp.classList.contains("appear")){
@@ -30,10 +32,10 @@ const GamePage = ({character}) => {
   const levelConfiguration = levels[parsedLevelIndex];
 
   const gameService = GameService.getInstance(parsedLevelIndex);
-  gameService.addTileEvent(1, levelConfiguration.endPos, (event) => {
+  gameService.addTileEvent(1, levelConfiguration.endPos, () => {
     setShowTestPopUp(true)
   });
-  const tileMap = gameService.start(levelConfiguration);
+  const tileMap = gameService.start(levelConfiguration, character);
 
   useEffect(() => {
     gameService.freePlayer(setShowTestPopUp,setShowDialogPopUp);

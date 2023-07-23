@@ -1,5 +1,4 @@
-import Physicist from "../GameService/components/Physicist";
-
+import { allCharacters } from "../pages/constants";
 function move(controller,setShowTestPopUp, setShowDialogPopUp){
     if(controller.direction.x === 0 && controller.direction.y === 0) return;
 
@@ -12,16 +11,19 @@ function move(controller,setShowTestPopUp, setShowDialogPopUp){
         controller.position.x = newPosition.x;
         controller.position.y = newPosition.y;
     
+        //Move player and camera
         const player = controller.getPlayer();
         if(player) player.setAttribute("transform", `translate(${newPosition.x}, ${newPosition.y})`);
         controller.playerService.gameService.cameraService.moveLocation(controller.position);
         
+        //Check for test popup
         let tileIndex = controller.playerService.gameService.tileService.getTileIndex(newPosition);
         let endPos = controller.playerService.gameService.levelConfiguration.endPos
         if((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])){
             setShowTestPopUp(true)
         }
 
+        //Check for dialog popup
         let phyPos = controller.playerService.gameService.levelConfiguration.physicist.startPos;
         if (tileIndex.row === phyPos[0] && tileIndex.col === phyPos[1]) {
             if (!controller.hasInteractedWithPhyPos) {
