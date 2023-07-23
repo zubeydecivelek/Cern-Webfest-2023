@@ -1,7 +1,6 @@
 import CameraService from "./CameraService";
 import PlayerService from "../Player/PlayerService";
 import TileService from "../Tiles/TileService";
-import TileEventService from "../Tiles/TileEventService";
 import { Event } from "../Tiles/Events";
 
 export default class GameService {
@@ -10,11 +9,9 @@ export default class GameService {
         this.playerService = PlayerService.getInstance();
         this.tileService = TileService.getInstance();
         this.cameraService = CameraService.getInstance();
-        this.tileEventService = TileEventService.getInstance();
         this.playerService.gameService = this;
         this.tileService.gameService = this;
         this.cameraService.gameService = this;
-        this.tileEventService.gameService = this;
         this.events = [];
         this.triggeredEvents = [];
         

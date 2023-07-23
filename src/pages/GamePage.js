@@ -18,7 +18,6 @@ const GamePage = ({character}) => {
   const levelConfiguration = levels[parsedLevelIndex];
 
   const gameService = GameService.getInstance(parsedLevelIndex);
-  gameService.tileEventService.eventMatrix = levelConfiguration.eventMatrix;
   console.log(levelConfiguration.endPos);
   gameService.addTileEvent(1, levelConfiguration.endPos, (event) => {
     setShowTestPopUp(true)
