@@ -19,9 +19,6 @@ function move(controller,setShowTestPopUp, setShowDialogPopUp){
         let tileIndex = controller.playerService.gameService.tileService.getTileIndex(newPosition);
         
         let endPos = controller.playerService.gameService.levelConfiguration.endPos
-        // if((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])){
-        //     setShowTestPopUp(true)
-        // }
         if ((tileIndex.row === endPos[0]) && (tileIndex.col === endPos[1])) {
             if (!controller.hasInteractedWithTest) {
                 setShowTestPopUp(true);
