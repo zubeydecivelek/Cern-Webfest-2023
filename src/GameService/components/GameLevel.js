@@ -7,7 +7,6 @@ import TileService from "../../Tiles/TileService";
 import CameraService from '../CameraService';
 
 const GameLevel = ({ levelConfiguration, tileMap , character, directionImage}) => {
-  console.log(levelConfiguration, tileMap , character, directionImage)
   const { map, physicist, startPos, endPos } = levelConfiguration;
 
   const svgRef = useRef();

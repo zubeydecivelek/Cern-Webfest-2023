@@ -7,7 +7,6 @@ import "../styled/LastLevelPopUp.css"
 const LastLevelPopUp = ({ setShowPopUp }) => {
     const navigate = useNavigate();
 
-    console.log("LAST-LEVEL-POP_UP")
     const [page, setPage] = useState(1);
     const [selectedAnswers, setSelectedAnswers] = useState(new Array(lastLevel.questions.length).fill(""));
     const [showResult, setShowResult] = useState(false);

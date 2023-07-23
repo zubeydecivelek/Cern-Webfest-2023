@@ -7,15 +7,15 @@ import OpeningPage from './OpeningPage';
 import ChooseCharacterPage from './pages/ChooseCharacterPage';
 
 const App = () => {
-  const [character,setCharacter] = useState(null);
+  const [character, setCharacterString] = useState(null);
 
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/choose-character" element={<ChooseCharacterPage setCharacter={setCharacter}/>} />
-          <Route path="/game/:levelIndex" element={<GamePage character= {character}/>} />
+          <Route path="/choose-character" element={<ChooseCharacterPage setCharacter={setCharacterString}/>} />
+          <Route path="/game/:levelIndex" element={<GamePage character={character}/>} />
           <Route path="/end" element={<EndPage />} />
         </Routes>
       </BrowserRouter>

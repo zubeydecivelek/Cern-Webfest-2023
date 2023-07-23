@@ -1,41 +1,36 @@
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import './ChooseCharacter.css';
-import { characterImages } from './constants';
-import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook
+import { allCharacters } from './constants';
+import { useNavigate } from 'react-router-dom';
 
-
-const ChooseCharacterPage = ({setCharacter}) => {
-  const navigate = useNavigate(); // Create a navigate function using the hook
+const ChooseCharacterPage = ({ setCharacter }) => {
+  const navigate = useNavigate();
 
   const [selectedCharacterIndex, setSelectedCharacterIndex] = useState(null);
 
   const selectCharacter = (index) => {
     setSelectedCharacterIndex(index);
-    setCharacter(characterImages[index]);
+    setCharacter(Object.values(allCharacters)[index]); // Set the selected character using Object.values
   };
 
   const StartGame = () => {
     if (selectedCharacterIndex == null) {
-      setCharacter(characterImages[1]);
+      setCharacter(allCharacters.characterImage1); // Set the default character if none selected
     }
-    navigate(`/game/0`); 
-    
+    navigate(`/game/0`);
   };
 
   return (
     <div className="character-container">
       <h2>Choose Your Character</h2>
       <div className="character-list">
-        {characterImages.map((imageUrl, index) => (
+        {Object.entries(allCharacters).map(([characterName, characterImages], index) => (
           <div
             key={index}
             className={`character-item ${selectedCharacterIndex === index ? 'selected' : ''}`}
             onClick={() => selectCharacter(index)}
           >
-            <img
-              src={imageUrl}
-              alt={`Character ${index + 1}`}
-            />
+            <img src={characterImages.standing} alt={`Character ${index + 1}`} />
           </div>
         ))}
       </div>
@@ -44,6 +39,6 @@ const ChooseCharacterPage = ({setCharacter}) => {
       </button>
     </div>
   );
-  
-}
+};
+
 export default ChooseCharacterPage;
