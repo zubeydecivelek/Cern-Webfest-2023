@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../styled/Dialog.css"
 import { dialogs } from '../utils/informations';
-import scienctistImage from '../../images/physicist_face.png'; 
+import { images } from '../utils/images';
 
 const DialogPopUp = ({ setShowPopUp, levelNumber }) => {
   const currentDialog = dialogs[levelNumber];
@@ -31,7 +31,7 @@ const DialogPopUp = ({ setShowPopUp, levelNumber }) => {
         <h1>{currentDialog.title}</h1>
         <div className="dialog-content">
           <div className="scientist-photo">
-            <img src={scienctistImage} alt="Scientist" />
+            <img src={images[levelNumber]} alt="Scientist" />
           </div>
           <div className="information-text">
             <p>{currentDialog.informations[currentStep]}</p>
