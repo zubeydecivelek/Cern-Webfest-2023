@@ -21,11 +21,12 @@ const DialogPopUp = ({ setShowPopUp, levelNumber }) => {
   };
 
   const handleClose = () => {
+    setCurrentStep(0);
     setShowPopUp(false);
   };
 
   return (
-    <div className="popup-dialog">
+    <div className="popup-dialog" id="dialog-pop-up">
       <div className="popup-content-dialog">
         <h1>{currentDialog.title}</h1>
         <div className="dialog-content">

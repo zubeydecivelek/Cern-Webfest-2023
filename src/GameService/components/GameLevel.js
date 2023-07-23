@@ -6,7 +6,7 @@ import "./GameLevel.css"
 import TileService from "../../Tiles/TileService";
 import CameraService from '../CameraService';
 
-const GameLevel = ({ levelConfiguration, tileMap , character}) => {
+const GameLevel = ({ levelConfiguration, tileMap , character, directionImage}) => {
   const { map, physicist, startPos, endPos } = levelConfiguration;
 
   const svgRef = useRef();
@@ -24,7 +24,7 @@ const GameLevel = ({ levelConfiguration, tileMap , character}) => {
       <TileMap tileMap={tileMap} />
 
       {/* render the player using startPos */}
-      <Player svg={svgRef} startPos={startCoords} character={character}/>
+      <Player svg={svgRef} startPos={startCoords} character={character} directionImage={directionImage}/>
 
       <Physicist {...physicist}/>
       

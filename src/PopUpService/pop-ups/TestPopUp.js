@@ -23,6 +23,10 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
     event.preventDefault();
 
     setShowPopUp(false);
+    setSelectedAnswers(new Array(totalQuestions).fill(-1));
+    setSubmitted(false);
+    setScore(null);
+    setShowCongratulations(false);
     navigate("/game/" + nextLevel)
     };
 
@@ -69,7 +73,7 @@ const TestPopUp = ({ setShowPopUp, levelNumber }) => {
 
 
   return (
-    <div className="popup">
+    <div className="popup" id="test-pop-up">
       {isLastLevel ? (
         <LastLevelPopUp setShowPopUp={setShowPopUp} />
       ) : showCongratulations ? (

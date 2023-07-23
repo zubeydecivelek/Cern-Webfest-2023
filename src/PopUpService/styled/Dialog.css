@@ -9,6 +9,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    pointer-events: none;
+    opacity: 0;
   }
   
   .popup-content-dialog {
@@ -102,5 +105,10 @@
     .popup-content-dialog {
       max-width: 90%;
     }
+  }
+
+  .appear {
+    pointer-events: all;
+    opacity: 1;
   }
   
