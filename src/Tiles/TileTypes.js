@@ -1,4 +1,25 @@
 import Wall from "../images2/wall.png";
+import Floor from "../images/walk.png";
+import Start from "../images/start.png";
+import End from "../images/end.png";
+import HorizontalPipe1 from "../images/horizontalpipe1.png";
+import HorizontalPipe2 from "../images/horizontalpipe2.png";
+import BluePipe1Vertical from "../images/bluepipe1Vertical.png";
+import BluePipe2Vertical from "../images/bluepipe2Vertical.png";
+
+const TileTypes = [
+    {id: 1, type: "Floor", walkable: true, image: Floor},
+    {id: 2, type: "Floor Start", walkable: true, image: Start},
+    {id: 3, type: "Floor End", walkable: true, image: End},
+    {id: 4, type: "Horizontal Pipe 1", walkable: true, image: HorizontalPipe1},
+    {id: 5, type: "Horizontal Pipe 2", walkable: true, image: HorizontalPipe2},
+    {id: 6, type: "Blue Pipe 1 Vertical", walkable: true, image: BluePipe1Vertical},
+    {id: 7, type: "Blue Pipe 2 Vertical", walkable: true, image: BluePipe2Vertical},
+    {id: 0, type: "Wall", walkable: false,  image: Wall},
+]
+
+/*
+import Wall from "../images2/wall.png";
 import Floor from "../images2/floor.png";
 import FullRedPipe from "../images2/floor-left-full-red-pipe.png";
 import TopEndRedPipe from "../images2/floor-left-topend-red-pipe.png";
@@ -38,5 +59,6 @@ const TileTypes = [
     {id: 16, type: "Wall Top Left", walkable: false, image: WallTopLeft},
     {id: 17, type: "Wall Top", walkable: false, image: WallTop},
 ]
+*/
 
 export default TileTypes;
