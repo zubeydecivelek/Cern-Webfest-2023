@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# CERN WebFest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Explore the captivating world of subatomic physics in this educational and interactive React game designed for the CERN WebFest Hachakton event. Embark on a journey from the atom to the Higgs boson, uncovering the secrets of the universe in a fun and engaging way!
 
-## Available Scripts
+## Game Overview
 
-In the project directory, you can run:
+The CERN WebFest Hachakton React Game takes players on an exciting and educational journey through five fascinating levels:
 
-### `npm start`
+1. **Level 0: Atoms**
+   - Discover the concept of indivisible elements and John Dalton's theory.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Level 1: Electrons and Protons**
+   - Learn about the discovery of electrons and protons and Rutherford's experiment.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Level 2: Neutrons**
+   - Understand the role of neutrons in stabilizing the atom.
 
-### `npm test`
+4. **Level 3: Quarks and Gluons**
+   - Explore the classification of particles and the theory of quarks and gluons.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. **Bonus Level: Higgs**
+   - Unravel the mystery of mass and the Higgs particle's significance.
 
-### `npm run build`
+Get ready for an unforgettable subatomic adventure in the CERN WebFest Hachakton React Game!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to Play
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Playing the game is easy and intuitive:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Click the "Start Game" button to start your adventure.
 
-### `npm run eject`
+2. Progress through each level, completing challenges, quizzes, and mini-games to move forward.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Reach Level 4 and unlock the final revelation about the Higgs boson!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To begin your subatomic adventure, visit the [live demo](https://webfest-2023-xi.vercel.app/) and enjoy the What Are We Made Of Game!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+The CERN WebFest Game was developed using the following technologies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **React** - A powerful JavaScript library for building dynamic user interfaces.
+- **Node.js** - A server-side JavaScript runtime environment used for backend development.
+- **Pixilart** - An online pixel art tool used for creating game graphics.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+These technologies allowed us to create an interactive and engaging game that takes players on a captivating journey through the world of subatomic physics.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
